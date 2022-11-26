@@ -469,6 +469,7 @@ button {
 .card-link:hover .card-overly, .card-link:focus .card-overly{
   transform: translateY(0);
 }
+
 /* shadow under card element in gallery */
 .card-link:hover,
 .card-link:focus {
@@ -611,8 +612,7 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding-left: 40px;
-  padding-right: 40px;
+  padding: 40px;
 }
 
 .modal-close-button {
@@ -684,11 +684,6 @@ button {
 }
 
 /* form section on index page */
-.order-form {
-  margin-top: 75px;
-
-}
-
 .order-form .form-input {
   border: 0;
   background-color: transparent;
@@ -697,16 +692,24 @@ button {
 }
 
 .order-form .form-textarea {
-  border: 0;
   background-color: transparent;
   font-size: 14px;
   height: 120px;
   width: 100%;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+  padding: 15px 16px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-form .form-textarea:focus {
   outline: 0;
+  border-color: var(--item-color);
 }
+
 .order-form .form-input:focus {
   outline: 0;
 }
@@ -715,9 +718,7 @@ button {
   font-size: 20px;
   font-weight: 700;
   text-align: center;
-  position: absolute;
-  top: 40px;
-  position: relative;
+  margin-bottom: 12px;
 }
 
 .fieldset:has(input:focus) {
@@ -740,12 +741,26 @@ button {
   padding-bottom: 11px;
   padding-left: 12px;
   padding-right: 12px;
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.padding-none {
+  padding: 0;
+}
+
+.border-none {
+  border: none;
 }
 
 .order-form .form-icon {
   width: 18px;
   height: 18px;
   margin-right: 12px;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-form .form-label {
@@ -755,12 +770,6 @@ button {
   font-size: 12px;
   color: var(--light-text-color);
   letter-spacing: 0.01em;
-}
-
-.order-form .form-checkbox {
-  margin-left: 10px;
-  color: var(--light-text-color);
-
 }
 
 .form-button {
@@ -777,8 +786,54 @@ button {
   padding-left: 55px;
   padding-right: 55px;
   margin: auto;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  margin-top: 30px;
   font-family: inherit;
   letter-spacing: 00.06em;
+}
+
+/* checkbox from example */
+/* Option */
+
+.option {
+  display: block;
+  position: relative;
+}
+
+/* Check */
+
+.check {
+  padding-left: 36px;
+  font-size: 14px;
+  color: var(--light-text-color);
+}
+
+.check__input {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+.check__box {
+  position: absolute;
+  top: 0px;
+  left: 8px;
+  width: 16px;
+  height: 15px;
+  overflow: hidden;
+  border-radius: 2px;
+  border-color: var(--basic-text-color);
+  border: 2px solid;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/* Checked */
+
+.check__input:checked + .check__box {
+  border-color: var(--item-color);
+  background-color: var(--item-color);
+  background-image: url(../images/checkbox-tick.svg);
 }

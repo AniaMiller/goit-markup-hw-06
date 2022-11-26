@@ -68,7 +68,7 @@
                         <use xlink:href="./images/icons.svg#icon-close"></use>
                     </svg>
                 </button>
-                <h2 class="form-title">Leave your infromation and we'll call you back</h2>
+                <p class="form-title">Leave your infromation and we'll call you back</p>
                 <form class="order-form">
                     <fieldset class="fieldset">
                         <label for="name" class="form-label">Name</label>
@@ -94,15 +94,19 @@
                         <input class="form-input" type="email" id="email" />
                     </fieldset>
 
-                    <fieldset class="fieldset">
+                    <fieldset class="fieldset border-none padding-none">
                         <label for="comments" class="form-label">Comments</label>
-                        <input class="form-textarea" type="textarea" id="comments" placeholder="Enter the text">
+                        <textarea class="form-textarea" type="textarea" id="comments" placeholder="Enter the text"></textarea>
                     </fieldset>
 
-                    <label class="form-checkbox">
-                        <input type="checkbox" id="checkbox" />
-                        I agree with the newsletter and accept the Terms and Conditions
-                    </label>
+                    <div class="form-checkbox">
+                        <label class="check option">
+                            <input class="check__input" type="checkbox">
+                            I agree with the newsletter and accept the Terms and Conditions
+                            <span class="check__box"></span>
+                          </label>
+                    </div>
+
                 </form>
                 <button class="form-button" type="button">Send</button>
             </div>
